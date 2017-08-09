@@ -25,6 +25,11 @@ class RoutesController < ApplicationController
   def edit
   end
 
+  def destroy
+    @route.destroy
+    redirect_to routes_path
+  end
+
   def update
     if @route.update(route_params)
       redirect_to @route
