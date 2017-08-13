@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811223013) do
+ActiveRecord::Schema.define(version: 20170813111806) do
 
   create_table "routes", force: :cascade do |t|
     t.text "name", null: false
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(version: 20170811223013) do
   create_table "tickets", force: :cascade do |t|
     t.integer "user_id"
     t.integer "train_id"
+    t.integer "first_station_id"
+    t.integer "last_station_id"
+    t.index ["first_station_id"], name: "index_tickets_on_first_station_id"
+    t.index ["last_station_id"], name: "index_tickets_on_last_station_id"
   end
 
   create_table "trains", force: :cascade do |t|
