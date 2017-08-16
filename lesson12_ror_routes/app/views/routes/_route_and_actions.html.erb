@@ -1,0 +1,5 @@
+<div class="route"> Route name: <%= route.name %>
+  <%= link_to 'Показать маршрут', route %>
+  <%= link_to 'Изменить маршрут', edit_route_path(route) %>
+  <%= link_to 'Удалить его !!!!!!!', route, method: :delete, data: {confirm: 'Really????'} %>
+</div>

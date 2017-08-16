@@ -1,0 +1,7 @@
+<h1><%= form_name %></h1>
+
+<%= form_for @route do |f| %>
+    <%= f.label 'Тут надо вводить имя маршрута', :name %>
+    <%= f.text_field :name %>
+    <%= f.submit btn_text %>
+<% end %>

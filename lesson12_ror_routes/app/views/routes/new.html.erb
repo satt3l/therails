@@ -1,0 +1,10 @@
+<% if @route.errors.any? %>
+<div class="error">
+  При создании объекта возникли следующие ошибки: <br>
+  <% @route.errors.full_messages.each do |message| %>
+  <%= message %>
+  <% end %>
+</div>
+<% end %>
+<%= render 'form', btn_text: 'Создать', form_name: 'Супер удобная и адаптивная форма для создания маршрута!!. Так-то :)' %>
+<%= render 'nav' %>
