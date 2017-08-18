@@ -1,0 +1,6 @@
+<tr>
+  <td><%= station.name %></td>
+  <td><%= link_to 'Show', station %></td>
+  <td><%= link_to 'Edit', edit_station_path(station) %></td>
+  <td><%= link_to 'Delete', station, method: :delete, data: { confirm: 'Sure?' } %></td>
+</tr>
