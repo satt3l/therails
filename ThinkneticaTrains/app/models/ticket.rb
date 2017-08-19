@@ -1,5 +1,5 @@
 class Ticket < ActiveRecord::Base
-  belongs_to :train
+  belongs_to :train, optional: true
   belongs_to :passenger
 
   belongs_to :first_station, class_name: 'Station', foreign_key: :first_station_id

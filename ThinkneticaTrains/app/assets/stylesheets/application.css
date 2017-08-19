@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+.light-blue {
+  background: #ADD8E6
+}
+
+.light-gray {
+  background: #F0F0F0;
+}
+
+.lavender {
+  background: #E6E6FA;
+}
+
+.aliceblue {
+  background: #F0F8FF;
+}
+
+.lightcyan {
+  background: #E0FFFF;
+}
+
+.lightsteelblue {
+  background: #B0C4DE;
+}

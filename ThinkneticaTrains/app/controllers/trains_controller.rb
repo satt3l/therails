@@ -1,5 +1,6 @@
-class TrainsController < ActionController
+class TrainsController < ApplicationController
   before_action :set_train, only: [:update, :edit, :destroy, :show]
+
   def index
     @trains = Train.all
   end
@@ -15,7 +16,7 @@ class TrainsController < ActionController
   end
 
   def update
-    if @train.save(train_params)
+    if @train.update(train_params)
       redirect_to @train
     else
       render :edit
@@ -27,12 +28,22 @@ class TrainsController < ActionController
     redirect_to trains_path
   end
 
+  def create
+    @train = Train.new(train_params)
+
+    if @train.save
+      redirect_to trains_path
+    else
+      render :new
+    end
+  end
+
   private
   def set_train
     @train = Train.find(params[:id])
   end
 
   def train_params
-    params.require(:train).permit(:name)
+    params.require(:train).permit(:name, :current_station_id, :route_id)
   end
 end

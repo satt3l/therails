@@ -1,1 +1,15 @@
-show
+<h1> Info on train <%= @train.name %> </h1>
+<% if @train.current_station %>
+  <p>Train <%= @train.name %> is on station <strong style="color:green"><%= @train.current_station.name %>.</strong></p>
+<% else %>
+  <p>Train <%= @train.name %> is in <strong style="color:red">Depo</strong>.</p>
+<% end %>
+
+<% if @train.route %>
+  <p>Train <%= @train.name %> is on route <strong style="color:green"><%= @train.route.name %>.</strong></p>
+<% else %>
+  <p>Train <%= @train.name %> is <strong style="color:red">not assigned a route.</strong></p>
+<% end %>
+
+<%= link_to 'Edit this train', edit_train_path(@train) %>
+<%= link_to 'Home', trains_path %>

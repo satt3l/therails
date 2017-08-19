@@ -1,1 +1,25 @@
-show
+<h1>Route details</h1>
+
+<p>
+	Route name: <%= @route.name %>
+</p>
+<p>
+  <% if @route.stations.empty? %>
+    No stations on this route yet
+  <% else %>
+  <p> Following stations are on route </p>
+    <% @route.stations.each do |s| %>
+      <p>Station name: <%= s.name %></p>
+  	<% end %>
+  <% end %>
+<% if @route.trains.empty? %>
+  No trains are on route.
+<% else %>
+  Trains on route:
+  <% @route.trains.each do |train| %>
+    <br>Train name: <%= train.name %> 
+  <% end %>
+<% end %>
+</p>
+<%= link_to 'Edit this route', edit_route_path(@route), class: 'light-blue' %>
+<%= link_to 'Home', routes_path, class: 'lavender' %>

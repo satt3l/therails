@@ -11,6 +11,10 @@
     <%= f.collection_select :station_ids, Station.all, :id, :name, {}, { multiple: true } %>
   </div>
 
+  <div class="field">
+    <%= f.label :station_ids, "Trains list" %>
+    <%= f.collection_select :train_ids, Train.all, :id, :name, {}, { multiple: true } %>
+  </div>
 
   <div class="actions">
     <%= f.submit "#{ @route.new_record? ? 'Create' : 'Change' }" %>

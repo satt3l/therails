@@ -1,6 +1,6 @@
 <tr>
   <td><%= train.name %></td>
-  <td><%= link_to 'Показать', [:admin, train] %></td>
-  <td><%= link_to 'Редактировать', edit_admin_train_path(train) %></td>
-  <td><%= link_to 'Удалить', [:admin, train], method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+  <td><%= link_to 'Show', train %></td>
+  <td><%= link_to 'Edit', edit_train_path(train) %></td>
+  <td><%= link_to 'Delete', train, method: :delete, data: { confirm: 'Sure?' } %></td>
 </tr>

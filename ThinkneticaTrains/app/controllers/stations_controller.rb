@@ -15,8 +15,8 @@ class StationsController < ApplicationController
   end
 
   def update
-    if @station.save(station_params)
-      redirect_to @station
+    if @station.update(station_params)
+      redirect_to stations_path
     else
       render :edit
     end
@@ -43,6 +43,6 @@ class StationsController < ApplicationController
   end
 
   def station_params
-    params.require(:station).permit(:name)
+    params.require(:station).permit([:name]).to_h
   end
 end

@@ -3,16 +3,15 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+    <%= f.text_field :name %><br />
+    <%= f.label :current_station, 'Select current station from list' %>
+    <%= f.collection_select :current_station_id, Station.all, :id, :name %>
+    <%= f.label :route, 'Set train on route:' %>
+    <%= f.collection_select :route_id, Route.all, :id, :name %>
 
-  <div class="field">
-    <%= f.label :station_ids, "Stations list" %>
-    <%= f.collection_select :station_ids, Station.all, :id, :title, {}, { multiple: true } %>
   </div>
-
 
   <div class="actions">
-    <%= f.submit "#{ @route.new_record? ? 'Create' : 'Change' }" %>
+    <%= f.submit "#{ @train.new_record? ? 'Create' : 'Change' }" %>
   </div>
 <% end %>
