@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Thinknetica educational project
 
-Things you may want to cover:
+Ruby version: 2.4.0
+Rails version: 5.1.3
 
-* Ruby version
+Passed lessons:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* lesson 14 - views (partials && anonymous partials)
+* lesson 13 - models association
+* lesson 12 - MVC Rest (scaffolding)
+* lesson 11 - Intro
