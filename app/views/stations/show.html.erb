@@ -1,0 +1,13 @@
+<h1> Info on station <%= @station.name %></h1>
+<% if @station.trains.empty? %>
+  Station is not occupied, not trains found.
+<% else %>
+  The following trains on this station:<br>
+	<% @station.trains.each do |train| %>
+    <%= train.name %><br>
+	<% end %>
+<% end %>
+
+<br>
+<%= link_to 'Edit this station', edit_station_path(@station) %>
+<%= link_to 'Home', stations_path %>

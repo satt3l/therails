@@ -1,0 +1,17 @@
+<%= form_for @train do |f| %>
+  <%= render 'common/errors', resource: @train %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br />
+    <%= f.label :current_station, 'Select current station from list' %>
+    <%= f.collection_select :current_station_id, Station.all, :id, :name %>
+    <%= f.label :route, 'Set train on route:' %>
+    <%= f.collection_select :route_id, Route.all, :id, :name %>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit "#{ @train.new_record? ? 'Create' : 'Change' }" %>
+  </div>
+<% end %>

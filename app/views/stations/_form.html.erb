@@ -1,0 +1,12 @@
+<%= form_for @station do |f| %>
+  <%= render 'common/errors', resource: @station %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "#{ @station.new_record? ? 'Create' : 'Change' }" %>
+  </div>
+<% end %>
